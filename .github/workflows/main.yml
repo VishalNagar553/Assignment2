@@ -35,7 +35,7 @@ jobs:
        ECR_REPOSITORY: asn2
        IMAGE_TAG: appv1.0
       run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
+          #docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
     - name: Tag and push MySQL Docker image to ECR
@@ -44,7 +44,7 @@ jobs:
        ECR_REPOSITORY: asn2db
        IMAGE_TAG: appdb1.0
       run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile_mysql .
+          #docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile_mysql .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
           
