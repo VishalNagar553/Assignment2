@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels: 
+    app: sql
+  name: mysql
+  namespace:  webapplication
+spec:
+  containers:
+  - name: mysqldb
+    image: 232901375965.dkr.ecr.us-east-1.amazonaws.com/asn2:appdb1.0
+    ports: 
+    - containerPort: 3306
+      protocol: TCP
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value : vishal

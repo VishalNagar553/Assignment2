@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels :
+    app: sql
+  name: mysql
+  namespace: webapplication
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysqldb
+        image: 232901375965.dkr.ecr.us-east-1.amazonaws.com/asn2:appdb1.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value : vishal
+        ports: 
+        - containerPort: 3306
+          protocol: TCP
