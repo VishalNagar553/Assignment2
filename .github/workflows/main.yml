@@ -30,8 +30,6 @@ jobs:
          AWS_REGION: us-east-1
     
     - name: Tag and push MySQL Docker image to ECR
-      env:
-       ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
       run: |
           aws ecr describe-repositories
         
